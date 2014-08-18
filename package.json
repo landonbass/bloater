@@ -1,0 +1,23 @@
+{
+  "name": "bloater",
+  "version": "0.0.1",
+  "description": "a simple state driven object converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/landonbass/bloater.git"
+  },
+  "author": "landon bass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/landonbass/bloater/issues"
+  },
+  "homepage": "https://github.com/landonbass/bloater",
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "chai": "~1.9.1"
+  }
+}
