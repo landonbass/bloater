@@ -23,10 +23,10 @@ Bloater.prototype.clearStates = function () {
 	return this;
 };
 
-Bloater.prototype.addState = function (name, mapping) {
-	bloater.states.push({
-		name: name,
-		mapping: mapping
+Bloater.prototype.addState = function (state) {
+	this.states.push({
+		name: state.name,
+		mapping: state.mapping
 	});
 	return this;
 };

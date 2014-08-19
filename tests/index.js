@@ -70,3 +70,16 @@ describe('addState function', function () {
 		bloater.states.length.should.equal(2);
   });
 });
+
+describe('get function', function () {
+  it('should return an object with the correct state', function () {
+		var entity = {name:'landon'},
+			state = {name:'test', mapping: ['name']};
+		bloater.clearStates()
+				.set(entity)
+				.addState(state);
+		var newEntity = bloater.get('test');
+		newEntity.name.should.equal(entity.name);
+  });
+
+});
