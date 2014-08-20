@@ -72,7 +72,7 @@ describe('addState function', function () {
 });
 
 describe('get function', function () {
-  it('should return an object with the correct state', function () {
+  it('should return an object', function () {
 		var entity = {name:'landon'},
 			state = {name:'test', mapping: ['name']};
 		bloater.clearStates()
@@ -81,5 +81,20 @@ describe('get function', function () {
 		var newEntity = bloater.get('test');
 		newEntity.name.should.equal(entity.name);
   });
-
+  it('should return an object with the state set correctly', function () {
+		var entity = {firstName:'landon', lastName:'bass', fullName:'landon bass'},
+			state = {name:'master', mapping: ['firstName', 'lastName','fullName']},
+			state2 = {name:'dto', mapping: ['firstName', 'lastName']};
+		bloater.clearStates()
+				.set(entity)
+				.addState(state)
+				.addState(state2);
+		var newEntity = bloater.get('dto');
+		newEntity.should.have.property('firstName');
+		newEntity.should.have.property('lastName');
+		newEntity.should.not.have.property('fullName');
+		newEntity.firstName.should.equal(entity.firstName);
+		newEntity.lastName.should.equal(entity.lastName);
+		
+  });
 });
