@@ -134,4 +134,14 @@ describe('get function', function () {
 			}
 		*/
   });
+   it('should return an function as a property', function () {
+		var entity = {firstName:'landon', lastName:'bass', fullName: function(){return this.firstName+' ' +this.lastName}},
+			state = {name:'master', mapping: ['firstName', 'lastName','fullName']};
+		bloater.clearStates()
+				.set(entity)
+				.addState(state);
+		var e = bloater.get('master');
+		e.fullName().should.equal('landon bass');
+				
+	});
 });
