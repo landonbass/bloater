@@ -31,17 +31,17 @@ Bloater.prototype.addState = function (state) {
 	return this;
 };
 
- Bloater.prototype.get = function (state) {
-	var st,
+ Bloater.prototype.get = function (stateName) {
+	var selectedState,
 		ent = this.entity,
 		obj = {};
-	this.states.forEach(function (s) {
-		if (s.name === state) {
-			st = s;
+	this.states.forEach(function (state) {
+		if (state.name === stateName) {
+			selectedState = state;
 		}
 	});
 
-	st.mapping.forEach(function (property) {
+	selectedState.mapping.forEach(function (property) {
 		if (ent.hasOwnProperty(property)) {
 			obj[property] = ent[property];
 		}
