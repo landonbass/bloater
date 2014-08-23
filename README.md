@@ -43,3 +43,12 @@ it is useful when you want to temporarily denormalize data (perhaps for UI displ
 				, jobId: 123
 			}
 		*/
+
+		functions work as well:
+		var entity = {firstName:'landon', lastName:'bass', fullName: function(){return this.firstName+' ' +this.lastName}},
+			state = {name:'master', mapping: ['firstName', 'lastName','fullName']};
+		bloater.clearStates()
+				.set(entity)
+				.addState(state);
+		var e = bloater.get('master');
+		e.fullName().should.equal('landon bass');
