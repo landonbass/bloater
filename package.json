@@ -2,9 +2,9 @@
   "name": "bloater",
   "version": "0.0.1",
   "description": "a simple state driven object converter",
-  "main": "index.js",
+  "main": "src/bloater.js",
   "scripts": {
-    "test": "mocha tests/index.js"
+    "test": "mocha tests/tests.js"
   },
   "repository": {
     "type": "git",
